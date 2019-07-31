@@ -27,6 +27,17 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
 
+- task: ArtifactoryBuildPromotion@1
+  inputs:
+    artifactoryService: 'Artifactory'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    targetRepo: 'azure-devops-local'
+    status: 'Released'
+    includeDependencies: true
+    copy: false
+    dryRun: false
+
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
