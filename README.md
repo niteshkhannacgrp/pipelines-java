@@ -1,4 +1,4 @@
-
+[![Build Status](https://cgna-stg.visualstudio.com/ESS%20Mobility/_apis/build/status/niteshkhannacgrp.pipelines-java?branchName=master)](https://cgna-stg.visualstudio.com/ESS%20Mobility/_build/latest?definitionId=60&branchName=master)
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
