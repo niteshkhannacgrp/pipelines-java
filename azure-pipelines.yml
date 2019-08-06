@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -27,7 +28,20 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
 
-
+- task: ArtifactoryGenericUpload@1
+  inputs:
+    artifactoryService: 'Artifactory'
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "$(Build.SourcesDirectory)/**",
+            "target": "cloudformation-local/$(Build.Repository.Name)/development/$(version)/"
+          }
+        ]
+      }
+    failNoOp: true
 
 
 - script: |
