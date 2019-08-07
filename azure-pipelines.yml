@@ -43,6 +43,11 @@ steps:
       }
     failNoOp: true
 
+- task: ArtifactoryPublishBuildInfo@1
+  inputs:
+    artifactoryService: 'Artifactory'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
