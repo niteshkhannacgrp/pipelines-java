@@ -37,7 +37,7 @@ steps:
         "files": [
           {
             "pattern": "$(Build.SourcesDirectory)/**",
-            "target": "cloudformation-local/$(Build.Repository.Name)/development/"
+            "target": "cloudformation-local/$(Build.Repository.Name)/master/"
           }
         ]
       }
